@@ -10,6 +10,8 @@ package edu.wpi.first.wpilibj.templates;
 
 import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.camera.AxisCamera;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 
 
 public class RobotTemplate extends IterativeRobot {
@@ -21,11 +23,12 @@ public class RobotTemplate extends IterativeRobot {
     
     private Claw claw1;
     // private Relay piston1;
+    private EncoderTest encoder1;
     
     private RobotDrive robotDrive;
     
     AxisCamera camera;
- 
+    
     
     public void robotInit() {
         joy1 = new Joystick(1); // Joystick(int port)
@@ -39,6 +42,7 @@ public class RobotTemplate extends IterativeRobot {
             piston1.setDirection(Relay.Direction.kBoth); // Allow retracting the piston
         */
         // </editor-fold>
+        encoder1   = new EncoderTest();
 
         robotDrive = new RobotDrive(drive1, drive2); // RobotDrive(int leftMotorChannel, int rightMotorChannel) 
         // RobotDrive default sensitivity; can change with RobotDrive(int, int, double sensitivity)
@@ -62,6 +66,7 @@ public class RobotTemplate extends IterativeRobot {
         driveControl();
         DriverStationLCD.getInstance().updateLCD();        
         pistonControl();
+        updateDashboard();
     }
     
     public void driveControl() {
@@ -74,5 +79,10 @@ public class RobotTemplate extends IterativeRobot {
         }else{
             claw1.Retract();
         }
+    }
+    private void updateDashboard(){
+        SmartDashboard.putNumber("distance", encoder1.getDistance());
+        SmartDashboard.putBoolean("direction", encoder1.getDirection());
+        SmartDashboard.putNumber("count", encoder1.getCount());
     }
 }

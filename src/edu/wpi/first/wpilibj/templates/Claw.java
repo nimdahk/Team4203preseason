@@ -44,11 +44,8 @@ public class Claw {
     public void RelayOff(){
         relay1.set(Relay.Value.kOff);
     }
-    public Solenoid getPiston1(){
+    public Solenoid getPiston(){
         return piston1;
-    }
-    public Solenoid getPiston2(){
-        return piston2;
     }
     public Relay getRelay(){
         return relay1;
