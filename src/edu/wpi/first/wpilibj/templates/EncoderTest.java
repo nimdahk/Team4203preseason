@@ -26,4 +26,7 @@ public class EncoderTest {
     public double getDistance(){
         return toughbox.getDistance();
     }
+    public Encoder getToughbox(){
+        return toughbox;
+    }
 }
