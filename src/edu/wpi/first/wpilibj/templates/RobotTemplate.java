@@ -42,7 +42,7 @@ public class RobotTemplate extends IterativeRobot {
             piston1.setDirection(Relay.Direction.kBoth); // Allow retracting the piston
         */
         // </editor-fold>
-        encoder1   = new EncoderTest();
+        encoder1   = new EncoderTest(2, 1);
 
         robotDrive = new RobotDrive(drive1, drive2); // RobotDrive(int leftMotorChannel, int rightMotorChannel) 
         // RobotDrive default sensitivity; can change with RobotDrive(int, int, double sensitivity)

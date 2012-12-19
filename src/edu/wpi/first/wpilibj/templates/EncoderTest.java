@@ -12,8 +12,8 @@ import edu.wpi.first.wpilibj.*;
 public class EncoderTest {
     private Encoder toughbox;
     
-    public EncoderTest(){
-        toughbox = new Encoder(2, 1);
+    public EncoderTest(int slotA, int slotB){
+        toughbox = new Encoder(slotA, slotB);
         toughbox.reset();
     }
     
