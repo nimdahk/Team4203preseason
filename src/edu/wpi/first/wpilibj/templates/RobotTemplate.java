@@ -10,7 +10,7 @@ package edu.wpi.first.wpilibj.templates;
 
 import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.camera.AxisCamera;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+//import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 
 
@@ -81,8 +81,8 @@ public class RobotTemplate extends IterativeRobot {
         }
     }
     private void updateDashboard(){
-        SmartDashboard.putNumber("distance", encoder1.getDistance());
+  /*      SmartDashboard.putNumber("distance", encoder1.getDistance());
         SmartDashboard.putBoolean("direction", encoder1.getDirection());
-        SmartDashboard.putNumber("count", encoder1.getCount());
+        SmartDashboard.putNumber("count", encoder1.getCount()); */
     }
 }
